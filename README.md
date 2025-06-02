@@ -1,83 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>SoC Agro-Telemetría para John Deere</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0 1.5rem;
-      background-color: #f5f5f5;
-      color: #333;
-    }
-    header {
-      background-color: #004a8f;
-      color: #fff;
-      padding: 1rem 0;
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-    h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    h2 {
-      color: #004a8f;
-      margin-top: 2rem;
-      border-bottom: 2px solid #004a8f;
-      padding-bottom: 0.3rem;
-    }
-    p {
-      margin: 1rem 0;
-    }
-    ul {
-      margin: 0.5rem 0 1rem 1.5rem;
-    }
-    code {
-      background-color: #eef;
-      padding: 0.1rem 0.3rem;
-      border-radius: 4px;
-      font-family: Consolas, "Courier New", monospace;
-    }
-    pre {
-      background-color: #eef;
-      padding: 0.8rem;
-      overflow-x: auto;
-      border-radius: 4px;
-    }
-    img {
-      max-width: 100%;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      margin: 0.5rem 0;
-    }
-    nav ul {
-      list-style: none;
-      padding: 0;
-    }
-    nav ul li {
-      display: inline-block;
-      margin-right: 1rem;
-    }
-    nav a {
-      color: #004a8f;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      margin-top: 2rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #666;
-      padding: 1rem 0;
-      border-top: 1px solid #ccc;
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -111,21 +33,15 @@
       <li>
         <strong>Lectura de valores analógicos:</strong> El STM32 convierte la señal analógica de cada potenciómetro a un valor de ADC. En la pantalla LCD se visualiza, por ejemplo, “<code>Key: 0 - ADC: 1.78</code>” indicando que, al presionar la tecla 0, el sistema muestra la lectura actual de voltaje (1.78 V en este caso).
         <br>
-        <img src="https://user-images.githubusercontent.com/tu_usuario/placeholder/stm32_lcd_reading.png" alt="Pantalla LCD mostrando valor ADC">
-        <p style="font-size: 0.9rem; color: #555;">*(Imagen ilustrativa: LCD mostrando “Key: 0 – ADC: 1.78”)*</p>
       </li>
       <li>
         <strong>Interacción mediante teclado matricial:</strong> Cada vez que se presiona una tecla del keypad 4×4, el firmware cambia de “canal” o “modo” de lectura. El LCD actualiza instantáneamente el valor correspondiente al potenciómetro seleccionado.  
         <br>
-        <img src="https://user-images.githubusercontent.com/tu_usuario/placeholder/keypad_interaction.png" alt="Teclado matricial STM32">
-        <p style="font-size: 0.9rem; color: #555;">*(Imagen ilustrativa: Mano presionando tecla “1” para mostrar valor del segundo potenciómetro)*</p>
-      </li>
+        </li>
       <li>
         <strong>Transmisión de datos a Raspberry Pi:</strong> En un tramo del video se aprecia la Raspberry Pi (o laptop) recibiendo datos por UART y mostrando en pantalla (terminal o script Python) los valores de ADC en tiempo real.  
         <br>
-        <img src="https://user-images.githubusercontent.com/tu_usuario/placeholder/raspberry_plot.png" alt="Dashboard Python en Raspberry Pi">
-        <p style="font-size: 0.9rem; color: #555;">*(Imagen ilustrativa: Gráfica en Python que se actualiza con valores de ADC cada ~40 ms)*</p>
-      </li>
+       </li>
       <li>
         <strong>Integración con hardware auxiliar:</strong> Se identifican los potenciómetros conectados al ADC del STM32, el LCD en interfaz paralelo, y el keypad en puertos GPIO. Además, se observa cómo el cable USB proporciona alimentación y conexión serial al PC para flashear el MCU y visualizar datos.  
       </li>
