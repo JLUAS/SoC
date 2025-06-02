@@ -1,0 +1,5 @@
+../Core/Src/rt_nonfinite.c:37:6:rt_InitInfAndNaN	16	static
+../Core/Src/rt_nonfinite.c:49:11:rtIsInf	16	static
+../Core/Src/rt_nonfinite.c:55:11:rtIsInfF	16	static
+../Core/Src/rt_nonfinite.c:61:11:rtIsNaN	48	static
+../Core/Src/rt_nonfinite.c:110:11:rtIsNaNF	24	static
